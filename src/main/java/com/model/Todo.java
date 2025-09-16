@@ -19,8 +19,10 @@ public class Todo {
     }
 
     public Todo(String title, String description) {
+        this();
         this.title = title;
         this.description = description;
+        this.completed = false;
     }
 
     public Todo(int id, String title, String description, boolean completed, LocalDateTime created_at, LocalDateTime updated_at) {
