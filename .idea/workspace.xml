@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Database connected">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
+    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="input pannel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/model/Todo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/util/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +36,9 @@
     &quot;accountId&quot;: &quot;6d720c8f-5a55-42a2-b8d8-97025a4ec988&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -99,7 +97,7 @@
       <workItem from="1757585839726" duration="31000" />
       <workItem from="1757585970414" duration="56000" />
       <workItem from="1757999418890" duration="10594000" />
-      <workItem from="1758083380324" duration="10855000" />
+      <workItem from="1758083380324" duration="11927000" />
     </task>
     <task id="LOCAL-00001" summary="Mayven_initialization">
       <option name="closed" value="true" />
@@ -133,7 +131,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758009680058</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="GUI implemented">
+      <option name="closed" value="true" />
+      <created>1758099563163</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758099563163</updated>
+    </task>
+    <task id="LOCAL-00006" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1758099576121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758099576121</updated>
+    </task>
+    <task id="LOCAL-00007" summary="input pannel">
+      <option name="closed" value="true" />
+      <created>1758099692906</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758099692906</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +176,9 @@
     <MESSAGE value="Mayven_initialization" />
     <MESSAGE value="changes" />
     <MESSAGE value="Database connected" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database connected" />
+    <MESSAGE value="GUI implemented" />
+    <MESSAGE value="gitignore" />
+    <MESSAGE value="input pannel" />
+    <option name="LAST_COMMIT_MESSAGE" value="input pannel" />
   </component>
 </project>
