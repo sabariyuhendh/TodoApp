@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/util/DatabaseConnection.java" afterDir="false" />
+    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Database connected">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Todo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/model/Todo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/util/DatabaseConnection.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -63,6 +68,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -92,7 +98,8 @@
       <workItem from="1757585183154" duration="257000" />
       <workItem from="1757585839726" duration="31000" />
       <workItem from="1757585970414" duration="56000" />
-      <workItem from="1757999418890" duration="5719000" />
+      <workItem from="1757999418890" duration="10594000" />
+      <workItem from="1758083380324" duration="10855000" />
     </task>
     <task id="LOCAL-00001" summary="Mayven_initialization">
       <option name="closed" value="true" />
@@ -110,7 +117,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757586002808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Database connected">
+      <option name="closed" value="true" />
+      <created>1758009610211</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758009610211</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Database connected">
+      <option name="closed" value="true" />
+      <created>1758009680058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758009680058</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mayven_initialization" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="Database connected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database connected" />
   </component>
 </project>
