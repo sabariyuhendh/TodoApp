@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="input pannel">
+    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="input pannel&#10;description">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/dao/TodoAppDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/dao/TodoAppDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +100,7 @@
       <workItem from="1757585839726" duration="31000" />
       <workItem from="1757585970414" duration="56000" />
       <workItem from="1757999418890" duration="10594000" />
-      <workItem from="1758083380324" duration="11927000" />
+      <workItem from="1758083380324" duration="17102000" />
     </task>
     <task id="LOCAL-00001" summary="Mayven_initialization">
       <option name="closed" value="true" />
@@ -155,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758099692906</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="input pannel&#10;description">
+      <option name="closed" value="true" />
+      <created>1758100676642</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1758100676642</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +190,7 @@
     <MESSAGE value="GUI implemented" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="input pannel" />
-    <option name="LAST_COMMIT_MESSAGE" value="input pannel" />
+    <MESSAGE value="input pannel&#10;description" />
+    <option name="LAST_COMMIT_MESSAGE" value="input pannel&#10;description" />
   </component>
 </project>
