@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Update workinh">
+    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Delete working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
@@ -106,7 +106,7 @@
       <workItem from="1757999418890" duration="10594000" />
       <workItem from="1758083380324" duration="17102000" />
       <workItem from="1758252353757" duration="354000" />
-      <workItem from="1758252732401" duration="8402000" />
+      <workItem from="1758252732401" duration="14618000" />
     </task>
     <task id="LOCAL-00001" summary="Mayven_initialization">
       <option name="closed" value="true" />
@@ -196,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758261217976</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Delete working">
+      <option name="closed" value="true" />
+      <created>1758262874515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1758262874515</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +232,7 @@
     <MESSAGE value="input pannel&#10;description&#10;Gui updated" />
     <MESSAGE value="Fecthing and updating" />
     <MESSAGE value="Update workinh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workinh" />
+    <MESSAGE value="Delete working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete working" />
   </component>
 </project>

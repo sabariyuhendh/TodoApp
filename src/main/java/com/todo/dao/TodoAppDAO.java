@@ -6,9 +6,13 @@ import java.util.List;
 import com.model.Todo;
 import com.todo.util.DatabaseConnection;
 
+import javax.xml.crypto.Data;
+
 public class TodoAppDAO {
 
     private static final String SELECT_ALL_TODOS = "SELECT * FROM todos ORDER BY created_at DESC";
+    private static final String SELECT_COMPLETED_TODOS = "SELECT * FROM todos WHERE COMPLETED = true";
+    private static final String SELECT_PENDING_TODOS = "SELECT * FROM todos WHERE COMPLETED = false";
     private static final String INSERT_TODO = "INSERT INTO todos (title, description, completed, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
     private static final String SELECT_TODO_BY_ID = "SELECT * FROM todos WHERE id = ?";
     private static final String UPDATE_TODO = "UPDATE todos SET title = ?, description = ?, completed = ?, updated_at = ? WHERE id = ?";
@@ -59,8 +63,8 @@ public class TodoAppDAO {
             stmt.setInt(1, id);
             return stmt.executeUpdate() > 0;
         }
-
     }
+
     private Todo getTodoRow(ResultSet res) throws SQLException {
         return new Todo(
                 res.getInt("id"),
@@ -85,7 +89,32 @@ public class TodoAppDAO {
         }
         return todos;
     }
-
+    public List<Todo> getCompletedTodos() throws SQLException {
+        List<Todo> todos = new ArrayList<>();
+        try (
+                Connection conn = DatabaseConnection.getDBConnection();
+                PreparedStatement stmt = conn.prepareStatement(SELECT_COMPLETED_TODOS);
+                ResultSet res = stmt.executeQuery()
+        ) {
+            while (res.next()) {
+                todos.add(getTodoRow(res));
+            }
+        }
+        return todos;
+    }
+    public List<Todo> getPendingTodos() throws SQLException {
+        List<Todo> todos = new ArrayList<>();
+        try (
+                Connection conn = DatabaseConnection.getDBConnection();
+                PreparedStatement stmt = conn.prepareStatement(SELECT_PENDING_TODOS);
+                ResultSet res = stmt.executeQuery()
+        ) {
+            while (res.next()) {
+                todos.add(getTodoRow(res));
+            }
+        }
+        return todos;
+    }
     public Todo getTodoById(int id) throws SQLException {
         try (
                 Connection conn = DatabaseConnection.getDBConnection();
