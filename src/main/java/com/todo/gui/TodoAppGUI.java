@@ -4,9 +4,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.SQLException;
-
+import java.util.List;
 import com.model.Todo;
 import com.todo.dao.TodoAppDAO;
+import java.util.Date;
 
 public class TodoAppGUI extends JFrame {
     private TodoAppDAO todoAppDAO;
@@ -25,6 +26,7 @@ public class TodoAppGUI extends JFrame {
         initializeComponents();
         setupComponents();
         setupEventListeners();
+        loadTodos();
     }
 
     private void initializeComponents() {
@@ -33,7 +35,7 @@ public class TodoAppGUI extends JFrame {
         setSize(900, 600);
         setLocationRelativeTo(null);
 
-        String[] columnNames = {"ID","Title","Description","Completed","Created At","Updated At"};
+        String[] columnNames = {"ID", "Title", "Description", "Completed", "Created At", "Updated At"};
         tableModel = new DefaultTableModel(columnNames, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -64,84 +66,138 @@ public class TodoAppGUI extends JFrame {
         String[] categoryOptions = {"All", "Completed", "Pending"};
         categoryComboBox = new JComboBox<>(categoryOptions);
     }
-
     private void setupComponents() {
-        setLayout(new BorderLayout(10, 10));
+        setLayout(new BorderLayout());
 
-        // Top Panel (Inputs + Buttons + Filters)
-        JPanel topPanel = new JPanel(new BorderLayout(10, 10));
-
-        // Input panel with GridBagLayout
+        // Input panel for title, description, completed checkbox
         JPanel inputPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-
-        gbc.gridx = 0; gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
         inputPanel.add(new JLabel("Title:"), gbc);
-
-        gbc.gridx = 1; gbc.gridy = 0;
+        gbc.gridx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         inputPanel.add(titleField, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 1;
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         inputPanel.add(new JLabel("Description:"), gbc);
-
-        gbc.gridx = 1; gbc.gridy = 1;
+        gbc.gridx = 1;
         inputPanel.add(new JScrollPane(descriptionArea), gbc);
 
-        gbc.gridx = 1; gbc.gridy = 2;
+        gbc.gridx = 1;
+        gbc.gridy = 2;
         inputPanel.add(completedCheckBox, gbc);
 
-        topPanel.add(inputPanel, BorderLayout.CENTER);
-
-        // Button Panel
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        // Button panel for Add, Update, Delete, Refresh
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         buttonPanel.add(addButton);
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
         buttonPanel.add(refreshButton);
 
-        topPanel.add(buttonPanel, BorderLayout.SOUTH);
-
-        // Filter Panel
+        // Filter panel for filter label and combo box
         JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        filterPanel.add(new JLabel("Category:"));
+        filterPanel.add(new JLabel("Filter:"));
         filterPanel.add(categoryComboBox);
 
-        topPanel.add(filterPanel, BorderLayout.NORTH);
+        // North panel to combine filter, input, and button panels
+        JPanel northPanel = new JPanel(new BorderLayout());
+        northPanel.add(filterPanel, BorderLayout.NORTH);
+        northPanel.add(inputPanel, BorderLayout.CENTER);
+        northPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        add(topPanel, BorderLayout.NORTH);
-
-        // Table in center
-        JScrollPane tableScrollPane = new JScrollPane(todoTable);
-        add(tableScrollPane, BorderLayout.CENTER);
-
+        add(northPanel, BorderLayout.NORTH);
         add(new JScrollPane(todoTable), BorderLayout.CENTER);
-        JPanel statusPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        statusPanel.add(new JLabel("Select"));
+        JPanel statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        statusPanel.add(new JLabel("Select a todo to edit or delete:"));
         add(statusPanel, BorderLayout.SOUTH);
-
     }
+
     private void setupEventListeners() {
-        addButton.addActionListener((e) -> addTodo());
-        editButton.addActionListener((e) -> editTodo());
-        deleteButton.addActionListener((e -> deleteTodo()));
-        refreshButton.addActionListener((e -> refreshTodo()));
+        addButton.addActionListener(
+                (e) ->{addTodo();});
+        editButton.addActionListener(
+                (e) ->{updateTodo();});
+        deleteButton.addActionListener(
+                (e) ->{deleteTodo();});
+        refreshButton.addActionListener(
+                (e) ->{refreshTodo();});
     }
-    private void addTodo() {
-        String title = titleField.getText();
-        String description = descriptionArea.getText();
+
+    private void addTodo(){
+        String title = titleField.getText().trim();
+        String description = descriptionArea.getText().trim();
+        boolean completed = completedCheckBox.isSelected();
+        if (title.isEmpty() || description.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Title or Description is empty!", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try {
+            Todo todo = new Todo(title,description);
+            todo.setCompleted(completed);
+            todoAppDAO.createtodo(todo);
+
+            JOptionPane.showMessageDialog(this,"Todo added succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+            loadTodos();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Error adding todo","Failure",JOptionPane.ERROR_MESSAGE);
+        }
     }
-    private void deleteTodo() {
+
+    private void updateTodo(){
+        int selectedRow = todoTable.getSelectedRow();
+        if(selectedRow >= 0){
+            JOptionPane.showMessageDialog(this,"Please select a row to update","Validation",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String title = titleField.getText().trim();
+        String description = descriptionArea.getText().trim();
+        if(title.isEmpty() || description.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Title or Description is empty!", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+        int id = (int)todoTable.getValueAt(selectedRow, 0);
 
     }
-    private void editTodo() {
+
+    private void deleteTodo(){
 
     }
-    private void refreshTodo() {
-
+    private void refreshTodo(){
+        loadTodos();
     }
-    private void loadTodo() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-       // List<Todo> todos = todoAppDAO.getTodos();
+    private void loadTodos(){
+        try {
+            List<Todo> todos = todoAppDAO.getAllTodos();
+            updateTable(todos);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error loading todos: " + e.getMessage(),
+                    "Database Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }
+//    private void updateTable(List<Todo> todos){
+//        int row = tableModel.setRowCount(0);
+//        for(Todo todo : todos){
+//            Object[] row = {todo.getId(), todo.getTitle(), todo.getDescription(), todo.isCompleted(), todo.getCreated_at(), todo.getUpdated_at()};
+//            tableModel.addRow(row);
+//        }
+//        int id = (int)todoTable.getValueAt(row,0);
+//
+//    }
+    private void loadSelectedTodo(){
+        int row  = todoTable.getSelectedRow();
+        if(row >= 0){
+            String title = tableModel.getValueAt(row, 1).toString();
+            String description = tableModel.getValueAt(row, 2).toString();
+            boolean completed = Boolean.parseBoolean(tableModel.getValueAt(row, 3).toString());
+            titleField.setText(title);
+            descriptionArea.setText(description);
+            completedCheckBox.setSelected(completed);
+        }
     }
 }
