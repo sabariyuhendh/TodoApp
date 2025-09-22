@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Delete working">
+    <list default="true" id="100ce20f-ffe2-4948-a4d9-cf0bcb5a798f" name="Changes" comment="Filter updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/dao/TodoAppDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/gui/TodoAppGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/dao/TodoAppDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/dao/TodoAppDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/todo/gui/TodoAppGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,8 @@
       <workItem from="1757999418890" duration="10594000" />
       <workItem from="1758083380324" duration="17102000" />
       <workItem from="1758252353757" duration="354000" />
-      <workItem from="1758252732401" duration="14618000" />
+      <workItem from="1758252732401" duration="16954000" />
+      <workItem from="1758514550817" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Mayven_initialization">
       <option name="closed" value="true" />
@@ -204,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758262874515</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Filter updated">
+      <option name="closed" value="true" />
+      <created>1758275435794</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1758275435794</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +239,7 @@
     <MESSAGE value="Fecthing and updating" />
     <MESSAGE value="Update workinh" />
     <MESSAGE value="Delete working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete working" />
+    <MESSAGE value="Filter updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filter updated" />
   </component>
 </project>

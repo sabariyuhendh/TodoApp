@@ -210,6 +210,10 @@ public class TodoAppGUI extends JFrame {
         catch (SQLException e){
             JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        setTitle("");
+        titleField.setText("");
+        descriptionArea.setText("");
+        completedCheckBox.setSelected(false);
         loadTodos();
     }
     private void filterTodo(){
